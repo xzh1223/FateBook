@@ -1,10 +1,11 @@
-package com.example.zhenghangxia.fatebook;
+package com.example.zhenghangxia.fatebook.activity;
 
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 
 import com.ashokvarma.bottomnavigation.BottomNavigationBar;
 import com.ashokvarma.bottomnavigation.BottomNavigationItem;
+import com.example.zhenghangxia.fatebook.R;
 import com.example.zhenghangxia.fatebook.base.BaseActivity;
 import com.example.zhenghangxia.fatebook.fragment.AccountFragment;
 import com.example.zhenghangxia.fatebook.fragment.LifeFragment;
