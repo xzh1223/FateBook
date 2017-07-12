@@ -1,11 +1,12 @@
 package com.example.zhenghangxia.fatebook.fragment;
 
 import android.view.View;
-import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 import com.example.zhenghangxia.fatebook.R;
+import com.example.zhenghangxia.fatebook.adapter.AccountAdapter;
 import com.example.zhenghangxia.fatebook.base.BaseFragment;
+import com.example.zhenghangxia.fatebook.bean.AccountBean;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,7 +17,7 @@ import java.util.List;
 
 public class AccountFragment extends BaseFragment {
     private ListView mListView;
-    private List<String> mList = new ArrayList<>();
+    private List<AccountBean> mList = new ArrayList<>();
 
     @Override
     protected int getLayout() {
@@ -34,17 +35,28 @@ public class AccountFragment extends BaseFragment {
         mListView.addFooterView(View.inflate(getActivity(), R.layout.footer_list, null));
 
         initData();
+        initListView();
 
+    }
+
+    private void initListView() {
+
+        AccountAdapter adapter = new AccountAdapter(getActivity(), mList);
+
+        mListView.setAdapter(adapter);
 
     }
 
     private void initData() {
 
-        for (int i = 0; i < 8; i++) {
-            mList.add("支出" + (i * 8));
+        for (int i = 0; i < 16; i++) {
+            AccountBean bean = new AccountBean();
+            bean.setTime("2017-07-12 17:16:00");
+            bean.setImgSrc(R.mipmap.icon_food);
+            bean.setNumber(-12);
+            bean.setTypeContent("午餐");
+            mList.add(bean);
         }
-
-        mListView.setAdapter(new ArrayAdapter<String>(getActivity(),android.R.layout.simple_list_item_1,mList));
 
     }
 }

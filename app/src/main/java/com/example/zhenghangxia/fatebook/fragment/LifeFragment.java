@@ -15,6 +15,6 @@ public class LifeFragment extends BaseFragment {
 
     @Override
     protected void initView() {
-        initToolBarTitle("生活");
+
     }
 }

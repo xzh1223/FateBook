@@ -15,7 +15,9 @@
         android:layout_marginRight="16dp"
         android:background="@null"
         android:scaleType="centerCrop"
-        android:src="@mipmap/icon_add"
+
         android:id="@+id/ib_add"/>
+
+    <!--android:src="@mipmap/icon_add"-->
 
 </android.support.v7.widget.Toolbar>

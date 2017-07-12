@@ -1,9 +1,13 @@
 package com.example.zhenghangxia.fatebook.fragment;
 
+import android.app.ActivityOptions;
 import android.content.Context;
 import android.content.Intent;
+import android.os.Build;
 import android.os.Handler;
+import android.support.annotation.RequiresApi;
 import android.support.v4.widget.SwipeRefreshLayout;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ImageView;
@@ -49,6 +53,7 @@ public class PlanFragment extends BaseFragment implements AdapterView.OnItemClic
     private PlanAdapter mAdapter;
     private List titleList;
     private SwipeRefreshLayout mRefresh;
+    private static final String TAG = "PlanFragment";
 
     @Override
     protected int getLayout() {
@@ -57,6 +62,8 @@ public class PlanFragment extends BaseFragment implements AdapterView.OnItemClic
 
     @Override
     protected void initView() {
+
+        Log.e(TAG, "initView: ");
 
         mRefresh = (SwipeRefreshLayout) getView().findViewById(R.id.srl_plan);
 
@@ -179,6 +186,7 @@ public class PlanFragment extends BaseFragment implements AdapterView.OnItemClic
 
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
         PlanBean planBean = (PlanBean) mAdapter.getItem(position-1);
@@ -187,7 +195,7 @@ public class PlanFragment extends BaseFragment implements AdapterView.OnItemClic
         intent.putExtra("time",planBean.getTime());
         intent.putExtra("content", planBean.getContent());
         intent.putExtra("star", planBean.getStar());
-        startActivity(intent);
+        startActivity(intent, ActivityOptions.makeSceneTransitionAnimation(getActivity()).toBundle());
 
     }
 
