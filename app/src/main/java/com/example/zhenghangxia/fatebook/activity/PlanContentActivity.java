@@ -15,6 +15,7 @@ import com.zzhoujay.richtext.RichText;
 /**
  * Created by zhenghangxia on 17-7-6.
  *
+ *      规划内容
  */
 public class PlanContentActivity extends BaseActivity {
     private TextView mTime;
@@ -49,6 +50,9 @@ public class PlanContentActivity extends BaseActivity {
         setListener();
     }
 
+    /**
+     *  设置监听事件
+     */
     private void setListener() {
 
         mAdd.setOnClickListener(new View.OnClickListener() {
@@ -60,6 +64,9 @@ public class PlanContentActivity extends BaseActivity {
 
     }
 
+    /**
+     *  设置数据显示
+     */
     private void setView() {
 
         mTime.setText(time);
@@ -79,6 +86,9 @@ public class PlanContentActivity extends BaseActivity {
         mRatingBar.setRating(star);
     }
 
+    /**
+     *  初始化数据
+     */
     private void initData() {
 
         time = getIntent().getStringExtra("time");

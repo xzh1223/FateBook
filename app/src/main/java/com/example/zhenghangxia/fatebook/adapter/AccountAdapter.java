@@ -2,7 +2,6 @@ package com.example.zhenghangxia.fatebook.adapter;
 
 import android.content.Context;
 import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,6 +17,8 @@ import java.util.List;
 
 /**
  * Created by zhenghangxia on 17-7-12.
+ *
+ *  记账页面列表适配器
  */
 
 public class AccountAdapter extends ArrayAdapter {
@@ -30,7 +31,6 @@ public class AccountAdapter extends ArrayAdapter {
         this.mList = mList;
     }
 
-    @Nullable
     @Override
     public Object getItem(int position) {
         return mList.get(position);
@@ -38,7 +38,7 @@ public class AccountAdapter extends ArrayAdapter {
 
     @NonNull
     @Override
-    public View getView(int position, View convertView, ViewGroup parent) {
+    public View getView(int position, View convertView, @NonNull ViewGroup parent) {
         AccountBean bean = (AccountBean) getItem(position);
         ViewHolder holder;
         if (convertView == null) {
@@ -55,7 +55,7 @@ public class AccountAdapter extends ArrayAdapter {
         if (bean != null) {
             holder.mTextTime.setText(bean.getTime());
             holder.mTextStyle.setText(bean.getTypeContent());
-            holder.mTextNumber.setText(bean.getNumber()+"");
+            holder.mTextNumber.setText(String.valueOf(bean.getNumber()));
             Glide.with(mContext).load(bean.getImgSrc()).into(holder.mImageView);
         }
         return convertView;
@@ -66,7 +66,7 @@ public class AccountAdapter extends ArrayAdapter {
         return mList.size();
     }
 
-    public class ViewHolder {
+    private class ViewHolder {
 
         ImageView mImageView;
         TextView mTextTime;

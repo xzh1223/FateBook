@@ -2,15 +2,24 @@ package com.example.zhenghangxia.fatebook.bean;
 
 /**
  * Created by zhenghangxia on 17-7-12.
+ *
+ *  记账实体类
+ *
  */
 
 public class AccountBean {
 
+    // ID
     private int id;
+    // 类型代号
     private int type;
+    // 类型
     private String typeContent;
+    // 数额
     private double number;
+    // 图标
     private int imgSrc;
+    // 时间
     private String time;
 
     public int getId() {

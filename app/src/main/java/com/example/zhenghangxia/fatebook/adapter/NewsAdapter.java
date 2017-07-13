@@ -2,7 +2,6 @@ package com.example.zhenghangxia.fatebook.adapter;
 
 import android.content.Context;
 import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,6 +17,9 @@ import java.util.List;
 
 /**
  * Created by zhenghangxia on 17-7-12.
+ *
+ *  新闻页面列表适配器
+ *
  */
 
 public class NewsAdapter extends ArrayAdapter {
@@ -30,7 +32,6 @@ public class NewsAdapter extends ArrayAdapter {
         this.mList = mList;
     }
 
-    @Nullable
     @Override
     public Object getItem(int position) {
         return mList.get(position);
@@ -70,7 +71,7 @@ public class NewsAdapter extends ArrayAdapter {
         return mList.size();
     }
 
-    public class ViewHolder {
+    private class ViewHolder {
 
         TextView mTextTitle;
         TextView mTextContent;

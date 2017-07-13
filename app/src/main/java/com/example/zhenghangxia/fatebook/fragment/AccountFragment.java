@@ -13,6 +13,9 @@ import java.util.List;
 
 /**
  * Created by zhenghangxia on 17-7-5.
+ *
+ *  记账界面
+ *
  */
 
 public class AccountFragment extends BaseFragment {
@@ -39,6 +42,9 @@ public class AccountFragment extends BaseFragment {
 
     }
 
+    /**
+     *  初始化 ListView
+     */
     private void initListView() {
 
         AccountAdapter adapter = new AccountAdapter(getActivity(), mList);
@@ -47,6 +53,9 @@ public class AccountFragment extends BaseFragment {
 
     }
 
+    /**
+     *  初始化数据
+     */
     private void initData() {
 
         for (int i = 0; i < 16; i++) {

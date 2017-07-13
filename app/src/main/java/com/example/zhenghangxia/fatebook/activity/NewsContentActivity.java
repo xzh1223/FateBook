@@ -6,6 +6,9 @@ import com.example.zhenghangxia.fatebook.R;
 import com.example.zhenghangxia.fatebook.activity.base.BaseActivity;
 import com.zzhoujay.richtext.RichText;
 
+/**
+ * 新闻内容
+ */
 public class NewsContentActivity extends BaseActivity {
 
     private TextView mTitle;
@@ -34,6 +37,9 @@ public class NewsContentActivity extends BaseActivity {
         setView();
     }
 
+    /**
+     *  显示数据
+     */
     private void setView() {
 
         mTitle.setText(title);
@@ -42,6 +48,9 @@ public class NewsContentActivity extends BaseActivity {
         RichText.from(content).into(mContent);
     }
 
+    /**
+     *  初始化数据
+     */
     private void initData() {
 
         time = getIntent().getStringExtra("time");

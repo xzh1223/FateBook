@@ -36,6 +36,8 @@ import static com.example.zhenghangxia.fatebook.utils.Constants.tips;
 /**
  * Created by zhenghangxia on 17-7-5.
  *
+ *  规划页面
+ *
  */
 
 public class PlanFragment extends BaseFragment implements AdapterView.OnItemClickListener,
@@ -64,30 +66,31 @@ public class PlanFragment extends BaseFragment implements AdapterView.OnItemClic
     protected void initView() {
 
         Log.e(TAG, "initView: ");
+        if (getView() != null) {
+            mRefresh = (SwipeRefreshLayout) getView().findViewById(R.id.srl_plan);
 
-        mRefresh = (SwipeRefreshLayout) getView().findViewById(R.id.srl_plan);
+            mListView = (ListView) getView().findViewById(R.id.lv_plan_list);
+            // 添加头布局
+            mListView.addHeaderView(View.inflate(getActivity(), R.layout.header_list_plan, null));
+            // 添加尾布局
+            mListView.addFooterView(View.inflate(getActivity(), R.layout.footer_list, null));
 
-        mListView = (ListView) getView().findViewById(R.id.lv_plan_list);
-        // 添加头布局
-        mListView.addHeaderView(View.inflate(getActivity(), R.layout.header_list_plan, null));
-        // 添加尾布局
-        mListView.addFooterView(View.inflate(getActivity(), R.layout.footer_list, null));
+            mBanner = (Banner) getView().findViewById(R.id.banner_recent);
 
-        mBanner = (Banner) getView().findViewById(R.id.banner_recent);
+            // 悬浮菜单按钮
+            mFloatMenu = (FloatingActionMenu) getView().findViewById(R.id.fam_plan);
+            mWriteDaily = (FloatingActionButton) getView().findViewById(R.id.write_daily_plan);
+            mWriteWeekly = (FloatingActionButton) getView().findViewById(R.id.write_weekly_plan);
+            mWriteSummary = (FloatingActionButton) getView().findViewById(R.id.write_summary_plan);
+            mWriteEssay = (FloatingActionButton) getView().findViewById(R.id.write_essay_plan);
 
-        // 悬浮菜单按钮
-        mFloatMenu = (FloatingActionMenu) getView().findViewById(R.id.fam_plan);
-        mWriteDaily = (FloatingActionButton) getView().findViewById(R.id.write_daily_plan);
-        mWriteWeekly = (FloatingActionButton) getView().findViewById(R.id.write_weekly_plan);
-        mWriteSummary = (FloatingActionButton) getView().findViewById(R.id.write_summary_plan);
-        mWriteEssay = (FloatingActionButton) getView().findViewById(R.id.write_essay_plan);
+            // 设置标题栏
+            initToolBarTitle("规划");
 
-        // 设置标题栏
-        initToolBarTitle("规划");
+            setBannerView();
 
-        setBannerView();
-
-        setEvents();
+            setEvents();
+        }
     }
 
     /**
@@ -191,11 +194,13 @@ public class PlanFragment extends BaseFragment implements AdapterView.OnItemClic
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
         PlanBean planBean = (PlanBean) mAdapter.getItem(position-1);
 //        ToastUtil.toast(getActivity(),position + "");
-        Intent intent = new Intent(getActivity(), PlanContentActivity.class);
-        intent.putExtra("time",planBean.getTime());
-        intent.putExtra("content", planBean.getContent());
-        intent.putExtra("star", planBean.getStar());
-        startActivity(intent, ActivityOptions.makeSceneTransitionAnimation(getActivity()).toBundle());
+        if (planBean != null) {
+            Intent intent = new Intent(getActivity(), PlanContentActivity.class);
+            intent.putExtra("time", planBean.getTime());
+            intent.putExtra("content", planBean.getContent());
+            intent.putExtra("star", planBean.getStar());
+            startActivity(intent, ActivityOptions.makeSceneTransitionAnimation(getActivity()).toBundle());
+        }
 
     }
 

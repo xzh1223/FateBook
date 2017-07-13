@@ -2,12 +2,12 @@ package com.example.zhenghangxia.fatebook.utils;
 
 /**
  * Created by zhenghangxia on 17-7-5.
+ *
+ *      静态常量类
+ *
  */
 
 public class Constants {
-
-        //退出时间
-        public static long EXIT_TIME = 0;
 
         public static String[] images= new String[] {
                 "http://www.iamxiarui.com/wp-content/uploads/2017/03/myblog.png",

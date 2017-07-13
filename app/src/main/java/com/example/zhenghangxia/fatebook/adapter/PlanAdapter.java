@@ -18,6 +18,8 @@ import java.util.List;
 /**
  * Created by zhenghangxia on 17-7-5.
  *
+ *      规划页面列表适配器
+ *
  */
 
 public class PlanAdapter extends ArrayAdapter {

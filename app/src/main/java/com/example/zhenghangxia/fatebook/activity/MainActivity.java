@@ -12,9 +12,14 @@ import com.example.zhenghangxia.fatebook.fragment.LifeFragment;
 import com.example.zhenghangxia.fatebook.fragment.NewsFragment;
 import com.example.zhenghangxia.fatebook.fragment.PlanFragment;
 
+/**
+ * Created by zhenghangxia on 17-7-6.
+ *
+ *      主界面
+ *
+ */
 public class MainActivity extends BaseActivity implements BottomNavigationBar.OnTabSelectedListener {
 
-    private BottomNavigationBar mBottomNavigationBar;
     private FragmentTransaction mTransaction;
     private PlanFragment mPlanFragment;
     private Fragment mCurrentFragment;
@@ -30,7 +35,7 @@ public class MainActivity extends BaseActivity implements BottomNavigationBar.On
     @Override
     protected void initView() {
         // 底部导航栏
-        mBottomNavigationBar = (BottomNavigationBar) findViewById(R.id.bnb_main);
+        BottomNavigationBar mBottomNavigationBar = (BottomNavigationBar) findViewById(R.id.bnb_main);
         mBottomNavigationBar.setMode(BottomNavigationBar.MODE_FIXED);
         mBottomNavigationBar.setBackgroundStyle(BottomNavigationBar.BACKGROUND_STYLE_STATIC);
         mBottomNavigationBar.addItem(new BottomNavigationItem(R.mipmap.icon_main,"规划")

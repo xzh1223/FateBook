@@ -2,14 +2,22 @@ package com.example.zhenghangxia.fatebook.bean;
 
 /**
  * Created by zhenghangxia on 17-7-5.
+ *
+ *  规划实体类
+ *
  */
 
 public class PlanBean {
 
+    // 类型
     private int type;
+    // ID
     private int id;
+    // 时间
     private String time;
+    // 内容
     private String content;
+    // 星级
     private float star;
 
     public int getType() {

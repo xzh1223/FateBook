@@ -15,11 +15,11 @@ import java.util.List;
 
 /**
  * Created by zhenghangxia on 17-7-13.
+ *
+ *  新闻页面碎片基类
  */
 
 public abstract class NewsBasicFragment extends BaseFragment implements AdapterView.OnItemClickListener {
-
-    private ListView mListView;
 
     @Override
     protected int getLayout() {
@@ -28,28 +28,31 @@ public abstract class NewsBasicFragment extends BaseFragment implements AdapterV
 
     @Override
     protected void initView() {
-        mListView = (ListView) getView().findViewById(R.id.lv_news);
+        if (getView() != null) {
+            ListView mListView = (ListView) getView().findViewById(R.id.lv_news);
 
-        List<NewsBean> mList = new ArrayList<>();
+            List<NewsBean> mList = new ArrayList<>();
 
-        int num = getNumberTest();
+            int num = getNumberTest();
 
-        for (int i = 0; i < 8; i++) {
+            for (int i = 0; i < 8; i++) {
 
-            NewsBean newsBean = new NewsBean();
-            newsBean.setTitle("新闻 " + num + i);
-            newsBean.setContent("新闻的内容是这个");
-            newsBean.setImgSrc(R.mipmap.heng_1);
-            mList.add(newsBean);
+                NewsBean newsBean = new NewsBean();
+                newsBean.setTitle("新闻 " + num + i);
+                newsBean.setContent("新闻的内容是这个");
+                newsBean.setImgSrc(R.mipmap.heng_1);
+                mList.add(newsBean);
+            }
+
+            NewsAdapter mAdapter = new NewsAdapter(getActivity(), mList);
+
+            mListView.setAdapter(mAdapter);
+
+            mListView.setOnItemClickListener(this);
         }
-
-        NewsAdapter mAdapter = new NewsAdapter(getActivity(), mList);
-
-        mListView.setAdapter(mAdapter);
-
-        mListView.setOnItemClickListener(this);
     }
 
+    // 测试数字
     protected abstract int getNumberTest();
 
     @Override

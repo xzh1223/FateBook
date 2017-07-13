@@ -5,6 +5,9 @@ import com.example.zhenghangxia.fatebook.fragment.base.BaseFragment;
 
 /**
  * Created by zhenghangxia on 17-7-5.
+ *
+ *  生活页面
+ *
  */
 
 public class LifeFragment extends BaseFragment {
