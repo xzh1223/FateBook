@@ -1,4 +1,4 @@
-package com.example.zhenghangxia.fatebook.fragment;
+package com.example.zhenghangxia.fatebook.fragment.base;
 
 import android.content.Intent;
 import android.view.View;
@@ -8,17 +8,17 @@ import android.widget.ListView;
 import com.example.zhenghangxia.fatebook.R;
 import com.example.zhenghangxia.fatebook.activity.NewsContentActivity;
 import com.example.zhenghangxia.fatebook.adapter.NewsAdapter;
-import com.example.zhenghangxia.fatebook.base.BaseFragment;
 import com.example.zhenghangxia.fatebook.bean.NewsBean;
 
 import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by zhenghangxia on 17-7-11.
+ * Created by zhenghangxia on 17-7-13.
  */
 
-public class NewsItemListFragment extends BaseFragment implements AdapterView.OnItemClickListener {
+public abstract class NewsBasicFragment extends BaseFragment implements AdapterView.OnItemClickListener {
+
     private ListView mListView;
 
     @Override
@@ -28,15 +28,17 @@ public class NewsItemListFragment extends BaseFragment implements AdapterView.On
 
     @Override
     protected void initView() {
-
         mListView = (ListView) getView().findViewById(R.id.lv_news);
 
         List<NewsBean> mList = new ArrayList<>();
 
+        int num = getNumberTest();
+
         for (int i = 0; i < 8; i++) {
+
             NewsBean newsBean = new NewsBean();
-            newsBean.setTitle("新闻 " + i);
-            newsBean.setContent("新闻的内容是这个，就是这个整的是真个阿斯顿发离开房间了发多少个大师傅反对法打发");
+            newsBean.setTitle("新闻 " + num + i);
+            newsBean.setContent("新闻的内容是这个");
             newsBean.setImgSrc(R.mipmap.heng_1);
             mList.add(newsBean);
         }
@@ -46,8 +48,9 @@ public class NewsItemListFragment extends BaseFragment implements AdapterView.On
         mListView.setAdapter(mAdapter);
 
         mListView.setOnItemClickListener(this);
-
     }
+
+    protected abstract int getNumberTest();
 
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {

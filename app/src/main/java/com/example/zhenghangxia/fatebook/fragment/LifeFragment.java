@@ -1,7 +1,7 @@
 package com.example.zhenghangxia.fatebook.fragment;
 
 import com.example.zhenghangxia.fatebook.R;
-import com.example.zhenghangxia.fatebook.base.BaseFragment;
+import com.example.zhenghangxia.fatebook.fragment.base.BaseFragment;
 
 /**
  * Created by zhenghangxia on 17-7-5.

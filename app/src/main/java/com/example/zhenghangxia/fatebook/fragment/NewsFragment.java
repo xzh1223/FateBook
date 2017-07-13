@@ -1,13 +1,15 @@
 package com.example.zhenghangxia.fatebook.fragment;
 
+import android.content.SharedPreferences;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
+import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
 import com.example.zhenghangxia.fatebook.R;
 import com.example.zhenghangxia.fatebook.adapter.MyViewPagerAdapter;
-import com.example.zhenghangxia.fatebook.base.BaseFragment;
+import com.example.zhenghangxia.fatebook.fragment.base.BaseFragment;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -32,8 +34,8 @@ public class NewsFragment extends BaseFragment implements View.OnClickListener, 
 
     @Override
     protected void initView() {
-        initToolBarTitle("新闻");
 
+        initToolBarTitle("新闻");
         mNews1 = (TextView) getView().findViewById(R.id.news_1);
         mNews2 = (TextView) getView().findViewById(R.id.news_2);
         mNews3 = (TextView) getView().findViewById(R.id.news_3);
@@ -43,23 +45,25 @@ public class NewsFragment extends BaseFragment implements View.OnClickListener, 
         mViewPager = (ViewPager) getView().findViewById(R.id.viewPager);
 
         List<Fragment> fragments=new ArrayList<Fragment>();
-        fragments.add(new NewsItemListFragment());
-        fragments.add(new NewsItemListFragment());
-        fragments.add(new NewsItemListFragment());
-        fragments.add(new NewsItemListFragment());
-        fragments.add(new NewsItemListFragment());
+        fragments.add(new ChannelFirstFragment());
+        fragments.add(new ChannelSecondFragment());
+        fragments.add(new ChannelThirdFragment());
+        fragments.add(new ChannelForthFragment());
+        fragments.add(new ChannelFifthFragment());
         MyViewPagerAdapter adapter = new MyViewPagerAdapter(getActivity().getSupportFragmentManager(), fragments);
 
         mViewPager.setAdapter(adapter);
         mViewPager.addOnPageChangeListener(this);
 
         mViewPager.setCurrentItem(0);
+        savedShared(0);
 
         mNews1.setOnClickListener(this);
         mNews2.setOnClickListener(this);
         mNews3.setOnClickListener(this);
         mNews4.setOnClickListener(this);
         mNews5.setOnClickListener(this);
+
     }
 
     @Override
@@ -90,6 +94,8 @@ public class NewsFragment extends BaseFragment implements View.OnClickListener, 
 
     @Override
     public void onPageSelected(int position) {
+        savedShared(position);
+
         if (position == 0) {
             mNews1.setTextColor(getResources().getColor(R.color.md_blue_400));
             mNews2.setTextColor(getResources().getColor(R.color.md_grey_400));
@@ -121,6 +127,14 @@ public class NewsFragment extends BaseFragment implements View.OnClickListener, 
             mNews4.setTextColor(getResources().getColor(R.color.md_grey_400));
             mNews5.setTextColor(getResources().getColor(R.color.md_blue_400));
         }
+    }
+
+    private void savedShared(int position) {
+        SharedPreferences.Editor editor = pref.edit();
+        Log.e("shared外部--->",position+1+"");
+        editor.putInt("position", position+1);
+        editor.commit();
+        Log.e("shared内部--->", pref.getInt("position",0)+"");
     }
 
     @Override

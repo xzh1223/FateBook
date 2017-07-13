@@ -3,7 +3,7 @@ package com.example.zhenghangxia.fatebook.activity;
 import android.widget.TextView;
 
 import com.example.zhenghangxia.fatebook.R;
-import com.example.zhenghangxia.fatebook.base.BaseActivity;
+import com.example.zhenghangxia.fatebook.activity.base.BaseActivity;
 import com.zzhoujay.richtext.RichText;
 
 public class NewsContentActivity extends BaseActivity {

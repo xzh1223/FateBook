@@ -17,7 +17,7 @@ import com.bumptech.glide.Glide;
 import com.example.zhenghangxia.fatebook.R;
 import com.example.zhenghangxia.fatebook.activity.PlanContentActivity;
 import com.example.zhenghangxia.fatebook.adapter.PlanAdapter;
-import com.example.zhenghangxia.fatebook.base.BaseFragment;
+import com.example.zhenghangxia.fatebook.fragment.base.BaseFragment;
 import com.example.zhenghangxia.fatebook.bean.PlanBean;
 import com.example.zhenghangxia.fatebook.utils.ToastUtil;
 import com.github.clans.fab.FloatingActionButton;
@@ -190,7 +190,7 @@ public class PlanFragment extends BaseFragment implements AdapterView.OnItemClic
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
         PlanBean planBean = (PlanBean) mAdapter.getItem(position-1);
-        ToastUtil.toast(getActivity(),position + "");
+//        ToastUtil.toast(getActivity(),position + "");
         Intent intent = new Intent(getActivity(), PlanContentActivity.class);
         intent.putExtra("time",planBean.getTime());
         intent.putExtra("content", planBean.getContent());

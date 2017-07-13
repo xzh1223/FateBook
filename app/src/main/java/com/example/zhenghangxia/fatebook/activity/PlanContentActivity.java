@@ -1,12 +1,14 @@
 package com.example.zhenghangxia.fatebook.activity;
 
+import android.os.Build;
+import android.support.annotation.RequiresApi;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.RatingBar;
 import android.widget.TextView;
 
 import com.example.zhenghangxia.fatebook.R;
-import com.example.zhenghangxia.fatebook.base.BaseActivity;
+import com.example.zhenghangxia.fatebook.activity.base.BaseActivity;
 import com.example.zhenghangxia.fatebook.utils.ToastUtil;
 import com.zzhoujay.richtext.RichText;
 
@@ -29,12 +31,14 @@ public class PlanContentActivity extends BaseActivity {
         return R.layout.activity_plan_content;
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     @Override
     protected void initView() {
 
         initToolBar();
 
         mAdd = (ImageButton) findViewById(R.id.ib_add);
+        mAdd.setImageDrawable(getDrawable(R.mipmap.icon_add));
         mTime = (TextView) findViewById(R.id.tv_plan_time);
         mContent = (TextView) findViewById(R.id.tv_plan_content);
         mThink = (TextView) findViewById(R.id.tv_plan_think);

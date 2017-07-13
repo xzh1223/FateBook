@@ -1,6 +1,8 @@
-package com.example.zhenghangxia.fatebook.base;
+package com.example.zhenghangxia.fatebook.fragment.base;
 
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -17,6 +19,8 @@ import com.example.zhenghangxia.fatebook.R;
 
 public abstract class BaseFragment extends Fragment {
 
+    public SharedPreferences pref;
+
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -27,7 +31,7 @@ public abstract class BaseFragment extends Fragment {
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-
+        pref = PreferenceManager.getDefaultSharedPreferences(getActivity());
         initView();
     }
 

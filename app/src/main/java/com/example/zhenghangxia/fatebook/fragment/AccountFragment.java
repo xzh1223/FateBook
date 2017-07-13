@@ -5,7 +5,7 @@ import android.widget.ListView;
 
 import com.example.zhenghangxia.fatebook.R;
 import com.example.zhenghangxia.fatebook.adapter.AccountAdapter;
-import com.example.zhenghangxia.fatebook.base.BaseFragment;
+import com.example.zhenghangxia.fatebook.fragment.base.BaseFragment;
 import com.example.zhenghangxia.fatebook.bean.AccountBean;
 
 import java.util.ArrayList;
