@@ -7,7 +7,6 @@ import android.os.Build;
 import android.os.Handler;
 import android.support.annotation.RequiresApi;
 import android.support.v4.widget.SwipeRefreshLayout;
-import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ImageView;
@@ -16,9 +15,10 @@ import android.widget.ListView;
 import com.bumptech.glide.Glide;
 import com.example.zhenghangxia.fatebook.R;
 import com.example.zhenghangxia.fatebook.activity.PlanContentActivity;
+import com.example.zhenghangxia.fatebook.activity.WritePlanActivity;
 import com.example.zhenghangxia.fatebook.adapter.PlanAdapter;
-import com.example.zhenghangxia.fatebook.fragment.base.BaseFragment;
 import com.example.zhenghangxia.fatebook.bean.PlanBean;
+import com.example.zhenghangxia.fatebook.fragment.base.BaseFragment;
 import com.example.zhenghangxia.fatebook.utils.ToastUtil;
 import com.github.clans.fab.FloatingActionButton;
 import com.github.clans.fab.FloatingActionMenu;
@@ -55,7 +55,6 @@ public class PlanFragment extends BaseFragment implements AdapterView.OnItemClic
     private PlanAdapter mAdapter;
     private List titleList;
     private SwipeRefreshLayout mRefresh;
-    private static final String TAG = "PlanFragment";
 
     @Override
     protected int getLayout() {
@@ -65,7 +64,6 @@ public class PlanFragment extends BaseFragment implements AdapterView.OnItemClic
     @Override
     protected void initView() {
 
-        Log.e(TAG, "initView: ");
         if (getView() != null) {
             mRefresh = (SwipeRefreshLayout) getView().findViewById(R.id.srl_plan);
 
@@ -85,7 +83,7 @@ public class PlanFragment extends BaseFragment implements AdapterView.OnItemClic
             mWriteEssay = (FloatingActionButton) getView().findViewById(R.id.write_essay_plan);
 
             // 设置标题栏
-            initToolBarTitle("规划");
+            initToolBarTitle(getResources().getString(R.string.main_nav_plan));
 
             setBannerView();
 
@@ -228,19 +226,23 @@ public class PlanFragment extends BaseFragment implements AdapterView.OnItemClic
 
     @Override
     public void onClick(View v) {
-
+        Intent intent = new Intent(getActivity(), WritePlanActivity.class);
         switch (v.getId()) {
             case R.id.write_daily_plan:
-                ToastUtil.toast(getActivity(),"日记");
+                ToastUtil.toast(getActivity(), getResources().getString(R.string.plan_write_day));
+                startActivity(intent);
                 break;
             case R.id.write_weekly_plan:
-                ToastUtil.toast(getActivity(),"周记");
+                ToastUtil.toast(getActivity(), getResources().getString(R.string.plan_write_week));
+                startActivity(intent);
                 break;
             case R.id.write_summary_plan:
-                ToastUtil.toast(getActivity(),"心情");
+                ToastUtil.toast(getActivity(), getResources().getString(R.string.plan_write_summary));
+                startActivity(intent);
                 break;
             case R.id.write_essay_plan:
-                ToastUtil.toast(getActivity(),"随笔");
+                ToastUtil.toast(getActivity(), getResources().getString(R.string.plan_write_essay));
+                startActivity(intent);
                 break;
             default:
                 break;

@@ -29,7 +29,7 @@ public class AccountFragment extends BaseFragment {
 
     @Override
     protected void initView() {
-        initToolBarTitle("记账");
+        initToolBarTitle(getResources().getString(R.string.main_nav_account));
 
         mListView = (ListView) getView().findViewById(R.id.lv_account_list);
         // 添加头布局

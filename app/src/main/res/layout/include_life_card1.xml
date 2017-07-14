@@ -16,28 +16,28 @@
         android:orientation="horizontal">
 
         <RelativeLayout
-            android:id="@+id/rl_me_web"
+            android:id="@+id/rl_life_time"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1">
 
             <ImageView
-                android:id="@+id/iv_me_web_time"
+                android:id="@+id/iv_file_time"
                 android:layout_width="24dp"
                 android:layout_height="24dp"
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="6dp"
-                android:src="@mipmap/heng_1" />
+                android:src="@mipmap/icon_time" />
 
             <TextView
-                android:id="@+id/tv_me_web_time"
+                android:id="@+id/tv_file_time"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/iv_me_web_time"
+                android:layout_below="@id/iv_file_time"
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="8dp"
                 android:textColor="@color/md_grey_900"
-                android:textSize="16sp" />
+                android:textSize="14sp" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -45,35 +45,35 @@
                 android:layout_alignParentBottom="true"
                 android:layout_centerHorizontal="true"
                 android:layout_marginBottom="4dp"
-                android:text="文本"
+                android:text="@string/time_recommend_life"
                 android:textColor="@color/md_grey_500"
                 android:textSize="12sp" />
 
         </RelativeLayout>
 
         <RelativeLayout
-            android:id="@+id/rl_me_admin"
+            android:id="@+id/rl_life_recommend_book"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1">
 
             <ImageView
-                android:id="@+id/iv_me_admin"
+                android:id="@+id/iv_book_name"
                 android:layout_width="24dp"
                 android:layout_height="24dp"
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="6dp"
-                android:src="@mipmap/heng_1" />
+                android:src="@mipmap/icon_book" />
 
             <TextView
-                android:id="@+id/tv_me_admin"
+                android:id="@+id/tv_book_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/iv_me_admin"
+                android:layout_below="@id/iv_book_name"
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="8dp"
                 android:textColor="@color/md_grey_900"
-                android:textSize="16sp" />
+                android:textSize="14sp" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -81,35 +81,72 @@
                 android:layout_alignParentBottom="true"
                 android:layout_centerHorizontal="true"
                 android:layout_marginBottom="4dp"
-                android:text="文本"
+                android:text="@string/book_recommend_life"
+                android:textColor="@color/md_grey_500"
+                android:textSize="12sp" />
+
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:id="@+id/rl_life_recommend_style"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <ImageView
+                android:id="@+id/iv_style_name"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="6dp"
+                android:src="@mipmap/icon_life" />
+
+            <TextView
+                android:id="@+id/tv_style_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/iv_style_name"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="8dp"
+                android:textColor="@color/md_grey_900"
+                android:textSize="14sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="4dp"
+                android:text="@string/style_recommend_life"
                 android:textColor="@color/md_grey_500"
                 android:textSize="12sp" />
 
         </RelativeLayout>
 
         <RelativeLayout
-            android:id="@+id/rl_me_collect"
+            android:id="@+id/rl_life_recommend_view"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1">
 
             <ImageView
-                android:id="@+id/iv_me_collect"
+                android:id="@+id/iv_view_name"
                 android:layout_width="24dp"
                 android:layout_height="24dp"
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="6dp"
-                android:src="@mipmap/heng_1" />
+                android:src="@mipmap/icon_view" />
 
             <TextView
-                android:id="@+id/tv_me_collect"
+                android:id="@+id/tv_view_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/iv_me_collect"
+                android:layout_below="@id/iv_view_name"
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="8dp"
                 android:textColor="@color/md_grey_900"
-                android:textSize="16sp" />
+                android:textSize="14sp" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -117,43 +154,7 @@
                 android:layout_alignParentBottom="true"
                 android:layout_centerHorizontal="true"
                 android:layout_marginBottom="4dp"
-                android:text="文本"
-                android:textColor="@color/md_grey_500"
-                android:textSize="12sp" />
-
-        </RelativeLayout>
-
-        <RelativeLayout
-            android:id="@+id/rl_me_draft"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1">
-
-            <ImageView
-                android:id="@+id/iv_me_draft"
-                android:layout_width="24dp"
-                android:layout_height="24dp"
-                android:layout_centerHorizontal="true"
-                android:layout_marginTop="6dp"
-                android:src="@mipmap/heng_1" />
-
-            <TextView
-                android:id="@+id/tv_me_draft"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/iv_me_draft"
-                android:layout_centerHorizontal="true"
-                android:layout_marginTop="8dp"
-                android:textColor="@color/md_grey_900"
-                android:textSize="16sp" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentBottom="true"
-                android:layout_centerHorizontal="true"
-                android:layout_marginBottom="4dp"
-                android:text="文本"
+                android:text="@string/view_recommend_life"
                 android:textColor="@color/md_grey_500"
                 android:textSize="12sp" />
 

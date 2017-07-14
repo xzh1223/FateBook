@@ -13,7 +13,6 @@
             android:layout_width="0dp"
             android:layout_height="40dp"
             android:layout_weight="1"
-            android:src="@mipmap/icon_books"
             android:layout_gravity="center"
             android:scaleType="center"
             android:id="@+id/iv_list_style"/>
@@ -29,7 +28,6 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="10dp"
-                android:text="3日9点"
                 android:id="@+id/tv_list_time"/>
 
             <TextView
@@ -37,7 +35,6 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="15dp"
-                android:text="早餐"
                 android:textSize="18sp"
                 android:id="@+id/tv_list_style"/>
 
@@ -50,7 +47,6 @@
             android:layout_gravity="center"
             android:layout_marginLeft="20dp"
             android:textSize="18sp"
-            android:text="-10"
             android:id="@+id/tv_list_number"/>
 
     </LinearLayout>

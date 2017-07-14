@@ -50,39 +50,31 @@
 
         <com.github.clans.fab.FloatingActionButton
             android:id="@+id/write_daily_plan"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            style="@style/MenuButtonsSmall"
+            style="@style/fab_fragment_plan"
             android:src="@mipmap/icon_daily"
-            app:fab_label="明日约定"
-            app:fab_size="mini" />
+            app:fab_label="@string/text_day_plan"
+            app:fab_size="mini"/>
 
         <com.github.clans.fab.FloatingActionButton
             android:id="@+id/write_weekly_plan"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            style="@style/MenuButtonsSmall"
+            style="@style/fab_fragment_plan"
             android:src="@mipmap/icon_weekly"
-            app:fab_label="相约7日后"
-            app:fab_size="mini" />
+            app:fab_label="@string/text_week_plan"
+            app:fab_size="mini"/>
 
         <com.github.clans.fab.FloatingActionButton
             android:id="@+id/write_summary_plan"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            style="@style/MenuButtonsSmall"
+            style="@style/fab_fragment_plan"
             android:src="@mipmap/icon_summary"
-            app:fab_label="表个心情"
-            app:fab_size="mini" />
+            app:fab_label="@string/text_summary_plan"
+            app:fab_size="mini"/>
 
         <com.github.clans.fab.FloatingActionButton
             android:id="@+id/write_essay_plan"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            style="@style/MenuButtonsSmall"
+            style="@style/fab_fragment_plan"
             android:src="@mipmap/icon_essay"
-            app:fab_label="随笔"
-            app:fab_size="mini" />
+            app:fab_label="@string/text_essay_plan"
+            app:fab_size="mini"/>
 
     </com.github.clans.fab.FloatingActionMenu>
 

@@ -38,13 +38,13 @@ public class MainActivity extends BaseActivity implements BottomNavigationBar.On
         BottomNavigationBar mBottomNavigationBar = (BottomNavigationBar) findViewById(R.id.bnb_main);
         mBottomNavigationBar.setMode(BottomNavigationBar.MODE_FIXED);
         mBottomNavigationBar.setBackgroundStyle(BottomNavigationBar.BACKGROUND_STYLE_STATIC);
-        mBottomNavigationBar.addItem(new BottomNavigationItem(R.mipmap.icon_main,"规划")
+        mBottomNavigationBar.addItem(new BottomNavigationItem(R.mipmap.icon_main, getResources().getString(R.string.main_nav_plan))
                         .setActiveColorResource(R.color.md_blue_400))
-                .addItem(new BottomNavigationItem(R.mipmap.icon_work,"记账")
+                .addItem(new BottomNavigationItem(R.mipmap.icon_work, getResources().getString(R.string.main_nav_account))
                         .setActiveColorResource(R.color.md_blue_400))
-                .addItem(new BottomNavigationItem(R.mipmap.icon_app,"新闻")
+                .addItem(new BottomNavigationItem(R.mipmap.icon_app, getResources().getString(R.string.main_nav_news))
                         .setActiveColorResource(R.color.md_blue_400))
-                .addItem(new BottomNavigationItem(R.mipmap.icon_mine,"生活")
+                .addItem(new BottomNavigationItem(R.mipmap.icon_mine, getResources().getString(R.string.main_nav_life))
                         .setActiveColorResource(R.color.md_blue_400))
                 .setFirstSelectedPosition(0)
                 .initialise();

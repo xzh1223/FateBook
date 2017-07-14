@@ -4,6 +4,15 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="none">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
     <View
         android:layout_width="match_parent"
         android:layout_height="180dp"
@@ -31,19 +40,23 @@
             android:layout_below="@id/iv_me_header"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="16dp"
-            android:text="生活不止眼前的苟且，还有诗和远方"
+            android:text="@string/motto_life"
             android:textColor="@color/md_white_1000"
             android:textSize="14sp" />
 
     </RelativeLayout>
 
     <!--第一个卡片-->
-    <include layout="@layout/include_me_card1" />
+    <include layout="@layout/include_life_card1" />
 
     <!--第二个卡片-->
-    <include layout="@layout/include_me_card2" />
+    <include layout="@layout/include_life_card2" />
 
     <!--第三个卡片-->
-    <include layout="@layout/include_me_card3" />
+    <include layout="@layout/include_life_card3" />
+
+        </RelativeLayout>
+
+    </ScrollView>
 
 </RelativeLayout>

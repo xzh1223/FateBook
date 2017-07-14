@@ -15,7 +15,7 @@
         android:layout_height="wrap_content"
         android:scrollbarThumbVertical="@color/md_blue_400"
         android:scrollbarSize="4dp"
-        android:layout_below="@+id/sv_news_content">
+        android:layout_below="@+id/sv_life_content">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -39,7 +39,7 @@
                     android:maxLines="2"
                     android:textColor="@color/md_white_1000"
                     android:textSize="20sp"
-                    android:id="@+id/tv_news_title" />
+                    android:id="@+id/tv_life_title" />
 
                 <TextView
                     android:layout_width="match_parent"
@@ -49,7 +49,7 @@
                     android:layout_marginTop="20dp"
                     android:textColor="@color/md_white_1000"
                     android:textSize="14sp"
-                    android:id="@+id/tv_news_time" />
+                    android:id="@+id/tv_life_remark" />
 
             </LinearLayout>
 
@@ -61,7 +61,7 @@
                 android:layout_marginTop="8dp"
                 android:textSize="16sp"
                 android:lineSpacingMultiplier="1.3"
-                android:id="@+id/tv_news_content" />
+                android:id="@+id/tv_file_content" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -73,7 +73,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center"
-                    android:text="@string/footer_news_content"/>
+                    android:text="@string/footer_life_content"/>
 
             </LinearLayout>
 

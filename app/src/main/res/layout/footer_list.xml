@@ -9,7 +9,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_margin="6dp"
-        android:text="-------------- 我可是有底线的 --------------"
+        android:text="@string/footer_plan"
         android:textColor="@color/md_grey_500"/>
 
 </LinearLayout>

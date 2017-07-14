@@ -10,37 +10,37 @@
     android:background="@color/md_white_1000"
     android:elevation="3dp">
 
-    <!--天气-->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="horizontal">
 
-        <!--实时详情-->
         <RelativeLayout
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="1">
+            android:layout_weight="1"
+            android:id="@+id/rl_life_recommend_robot">
 
             <ImageView
-                android:id="@+id/iv_weather_now"
+                android:id="@+id/iv_robot"
                 android:layout_width="60dp"
                 android:layout_height="60dp"
                 android:layout_centerHorizontal="true"
-                android:layout_marginTop="8dp" />
+                android:layout_marginTop="8dp"
+                android:src="@mipmap/icon_robot"/>
 
             <TextView
-                android:id="@+id/tv_weather_now_temp"
+                android:id="@+id/tv_robot"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/iv_weather_now"
+                android:layout_below="@id/iv_robot"
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="12dp"
                 android:textColor="@color/md_grey_700"
-                android:textSize="24sp" />
+                android:textSize="15sp"
+                android:text="@string/text_robot_content_life"/>
 
             <TextView
-                android:id="@+id/tv_weather_now_time"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentBottom="true"
@@ -48,7 +48,8 @@
                 android:layout_marginBottom="8dp"
                 android:layout_marginTop="8dp"
                 android:textColor="@color/md_grey_500"
-                android:textSize="14sp" />
+                android:textSize="14sp"
+                android:text="@string/text_robot_name_life"/>
 
 
         </RelativeLayout>
@@ -58,7 +59,6 @@
             android:layout_height="match_parent"
             android:background="@color/md_grey_300" />
 
-        <!--其他情况-->
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="match_parent"
@@ -72,29 +72,30 @@
                 android:layout_weight="1"
                 android:orientation="horizontal">
 
-                <!--空气-->
                 <RelativeLayout
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:layout_weight="1">
+                    android:layout_weight="1"
+                    android:id="@+id/rl_life_recommend_laugh">
 
                     <ImageView
-                        android:id="@+id/iv_weather_aqi"
-                        android:layout_width="32dp"
+                        android:id="@+id/iv_laugh"
+                        android:layout_width="24dp"
                         android:layout_height="32dp"
                         android:layout_centerHorizontal="true"
                         android:layout_marginTop="8dp"
-                        android:src="@mipmap/heng_1" />
+                        android:src="@mipmap/icon_laugh" />
 
                     <TextView
-                        android:id="@+id/tv_weather_aqi"
+                        android:id="@+id/tv_laugh"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_below="@id/iv_weather_aqi"
+                        android:layout_below="@id/iv_laugh"
                         android:layout_centerHorizontal="true"
                         android:layout_marginTop="12dp"
                         android:textColor="@color/md_grey_700"
-                        android:textSize="12sp" />
+                        android:textSize="12sp"
+                        android:text="@string/text_joke_life"/>
 
                 </RelativeLayout>
 
@@ -103,29 +104,30 @@
                     android:layout_height="match_parent"
                     android:background="@color/md_grey_300" />
 
-                <!--湿度-->
                 <RelativeLayout
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:layout_weight="1">
+                    android:layout_weight="1"
+                    android:id="@+id/rl_life_recommend_cookbook">
 
                     <ImageView
-                        android:id="@+id/iv_weather_hum"
-                        android:layout_width="32dp"
+                        android:id="@+id/iv_cookbook"
+                        android:layout_width="24dp"
                         android:layout_height="32dp"
                         android:layout_centerHorizontal="true"
-                        android:src="@mipmap/heng_1"
+                        android:src="@mipmap/icon_cookbook"
                         android:layout_marginTop="8dp" />
 
                     <TextView
-                        android:id="@+id/tv_weather_hum"
+                        android:id="@+id/tv_cookbook"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_below="@id/iv_weather_hum"
+                        android:layout_below="@id/iv_cookbook"
                         android:layout_centerHorizontal="true"
                         android:layout_marginTop="12dp"
                         android:textColor="@color/md_grey_700"
-                        android:textSize="12sp" />
+                        android:textSize="12sp"
+                        android:text="@string/text_cookbook_life"/>
 
                 </RelativeLayout>
 
@@ -143,61 +145,62 @@
                 android:layout_weight="1"
                 android:orientation="horizontal">
 
-                <!--风向-->
                 <RelativeLayout
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:layout_weight="1">
+                    android:layout_weight="1"
+                    android:id="@+id/rl_life_recommend_position">
 
                     <ImageView
-                        android:id="@+id/iv_weather_wind"
+                        android:id="@+id/iv_position"
                         android:layout_width="32dp"
                         android:layout_height="32dp"
                         android:layout_centerHorizontal="true"
                         android:layout_marginTop="8dp"
-                        android:src="@mipmap/heng_1" />
+                        android:src="@mipmap/icon_position" />
 
                     <TextView
-                        android:id="@+id/tv_weather_wind"
+                        android:id="@+id/tv_position"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_below="@id/iv_weather_wind"
+                        android:layout_below="@id/iv_position"
                         android:layout_centerHorizontal="true"
                         android:layout_marginTop="12dp"
                         android:textColor="@color/md_grey_700"
-                        android:textSize="12sp" />
+                        android:textSize="12sp"
+                        android:text="@string/text_position_life"/>
 
                 </RelativeLayout>
-
 
                 <View
                     android:layout_width="0.5dp"
                     android:layout_height="match_parent"
                     android:background="@color/md_grey_300" />
 
-                <!--风力-->
                 <RelativeLayout
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:layout_weight="1">
+                    android:layout_weight="1"
+                    android:id="@+id/rl_life_recommend_message">
 
                     <ImageView
-                        android:id="@+id/iv_weather_power"
+                        android:id="@+id/iv_message"
                         android:layout_width="32dp"
                         android:layout_height="32dp"
                         android:layout_centerHorizontal="true"
                         android:layout_marginTop="8dp"
-                        android:src="@mipmap/heng_1" />
+                        android:src="@mipmap/icon_message" />
 
                     <TextView
-                        android:id="@+id/tv_weather_power"
+                        android:id="@+id/tv_message"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_below="@id/iv_weather_power"
+                        android:layout_below="@id/iv_message"
                         android:layout_centerHorizontal="true"
                         android:layout_marginTop="12dp"
                         android:textColor="@color/md_grey_700"
-                        android:textSize="12sp" />
+                        android:textSize="12sp"
+                        android:text="@string/text_message_life"/>
 
                 </RelativeLayout>
 

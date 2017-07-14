@@ -35,7 +35,7 @@ public class NewsFragment extends BaseFragment implements View.OnClickListener, 
     @Override
     protected void initView() {
         if (getView() != null) {
-            initToolBarTitle("新闻");
+            initToolBarTitle(getResources().getString(R.string.main_nav_news));
             mNews1 = (TextView) getView().findViewById(R.id.news_1);
             mNews2 = (TextView) getView().findViewById(R.id.news_2);
             mNews3 = (TextView) getView().findViewById(R.id.news_3);

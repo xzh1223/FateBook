@@ -1,3 +1,61 @@
 <resources>
     <string name="app_name">FateBook</string>
+
+    <!-- activity/fragment -->
+    <!-- main -->
+    <string name="main_nav_plan">规划</string>
+    <string name="main_nav_account">记账</string>
+    <string name="main_nav_news">新闻</string>
+    <string name="main_nav_life">生活</string>
+
+    <!-- 规划页面 -->
+    <string name="plan_write_day">日记</string>
+    <string name="plan_write_week">周记</string>
+    <string name="plan_write_summary">心情</string>
+    <string name="plan_write_essay">随笔</string>
+
+    <!-- 其他 -->
+    <string name="no_">暂无效果</string>
+
+    <!-- layout -->
+    <!-- footer -->
+    <string name="footer_news_content"> === 世界那么大，赶紧去看看 === </string>
+    <string name="footer_plan"> === 我可是有底线的 === </string>
+    <string name="footer_plan_content"> === 每一天都会有收获 === </string>
+    <string name="footer_life_content"> === 生活是如此的丰富多彩，请不要辜负她 === </string>
+
+    <!-- layout_plan -->
+    <string name="title_plan">详情</string>
+    <string name="think_plan">总结与反思：</string>
+    <string name="result_plan">今天有什么收获，感悟到什么？</string>
+    <string name="star_plan">给今天的自己打的分：</string>
+    <string name="text_day_plan">明日约定</string>
+    <string name="text_week_plan">相约7日后</string>
+    <string name="text_summary_plan">表个心情</string>
+    <string name="text_essay_plan">随笔</string>
+
+    <!-- layout_account -->
+    <string name="pay_account">支出(元)</string>
+    <string name="income_account">收入(元)</string>
+
+    <!-- layout_life -->
+    <string name="motto_life">生活不止眼前的苟且，还有诗和远方</string>
+    <string name="book_recommend_life">好书</string>
+    <string name="time_recommend_life">已使用</string>
+    <string name="style_recommend_life">好生活</string>
+    <string name="view_recommend_life">好景</string>
+    <string name="text_robot_content_life">智能百科管家</string>
+    <string name="text_robot_name_life">小云机器人</string>
+    <string name="text_joke_life">每日一笑</string>
+    <string name="text_cookbook_life">今日菜谱</string>
+    <string name="text_position_life">位置</string>
+    <string name="text_message_life">系统消息</string>
+
+    <!-- layout_news -->
+    <string name="channel_1">频道1</string>
+    <string name="channel_2">频道2</string>
+    <string name="channel_3">频道3</string>
+    <string name="channel_4">频道4</string>
+    <string name="channel_5">频道5</string>
+
 </resources>

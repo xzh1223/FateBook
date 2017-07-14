@@ -9,6 +9,7 @@
         <item name="windowActionBar">false</item>
         <item name="android:windowNoTitle">true</item>
         <item name="colorPrimaryDark">@color/md_blue_500</item>
+        <item name="colorAccent">@color/md_blue_400</item>
     </style>
 
     <style name="ToolbarTheme" parent="Theme.AppCompat.Light">
@@ -21,6 +22,40 @@
         <item name="fab_colorNormal">@color/md_blue_400</item>
         <item name="fab_colorPressed">@color/md_blue_500</item>
         <item name="fab_colorRipple">@color/md_blue_300</item>
+    </style>
+
+    <!-- layout -->
+    <!-- fragment_news_style -->
+    <style name="normal_text_channel_fragment_news_style">
+        <item name="android:layout_width">80dp</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textColor">@color/md_grey_400</item>
+    </style>
+
+    <style name="selected_text_channel_fragment_news_style">
+        <item name="android:layout_width">80dp</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textColor">@color/md_blue_400</item>
+    </style>
+    <!-- tab_fragment_plan -->
+    <style name="fab_fragment_plan" parent="MenuButtonsSmall">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <!-- write -->
+    <style name="input_edit_layout">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_gravity">center_vertical|start</item>
+        <item name="android:layout_margin">5dp</item>
+    </style>
+    <style name="input_edit_text">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:gravity">top</item>
     </style>
 
 </resources>

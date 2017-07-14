@@ -14,46 +14,32 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:background="@color/md_white_1000">
 
             <TextView
-                android:layout_width="80dp"
-                android:layout_height="match_parent"
-                android:gravity="center"
-                android:textColor="@color/md_blue_400"
-                android:text="频道1"
+                style="@style/selected_text_channel_fragment_news_style"
+                android:text="@string/channel_1"
                 android:id="@+id/news_1" />
 
             <TextView
-                android:layout_width="80dp"
-                android:layout_height="match_parent"
-                android:gravity="center"
-                android:textColor="@color/md_grey_400"
-                android:text="频道2"
+                style="@style/normal_text_channel_fragment_news_style"
+                android:text="@string/channel_2"
                 android:id="@+id/news_2"/>
 
             <TextView
-                android:layout_width="80dp"
-                android:layout_height="match_parent"
-                android:gravity="center"
-                android:textColor="@color/md_grey_400"
-                android:text="频道3"
+                style="@style/normal_text_channel_fragment_news_style"
+                android:text="@string/channel_3"
                 android:id="@+id/news_3"/>
 
             <TextView
-                android:layout_width="80dp"
-                android:layout_height="match_parent"
-                android:gravity="center"
-                android:textColor="@color/md_grey_400"
-                android:text="频道4"
+                style="@style/normal_text_channel_fragment_news_style"
+                android:text="@string/channel_4"
                 android:id="@+id/news_4"/>
 
             <TextView
-                android:layout_width="80dp"
-                android:layout_height="match_parent"
-                android:gravity="center"
-                android:textColor="@color/md_grey_400"
-                android:text="频道5"
+                style="@style/normal_text_channel_fragment_news_style"
+                android:text="@string/channel_5"
                 android:id="@+id/news_5"/>
 
         </LinearLayout>
