@@ -14,6 +14,9 @@
     <string name="plan_write_summary">心情</string>
     <string name="plan_write_essay">随笔</string>
 
+    <!--AddBill-->
+    <string name="select">请选择</string>
+
     <!-- 其他 -->
     <string name="no_">暂无效果</string>
 
@@ -37,6 +40,8 @@
     <!-- layout_account -->
     <string name="pay_account">支出(元)</string>
     <string name="income_account">收入(元)</string>
+
+    <string name="add_a_bill">记一笔</string>
 
     <!-- layout_life -->
     <string name="motto_life">生活不止眼前的苟且，还有诗和远方</string>

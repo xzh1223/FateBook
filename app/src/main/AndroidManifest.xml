@@ -34,6 +34,7 @@
         <activity android:name=".activity.LifeContentActivity" />
         <activity android:name=".activity.WritePlanActivity" />
         <activity android:name=".activity.RobotActivity" />
+        <activity android:name=".activity.AddBillActivity" />
 
     </application>
 

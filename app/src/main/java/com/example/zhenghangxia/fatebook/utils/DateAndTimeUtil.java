@@ -14,9 +14,17 @@ import java.util.Date;
 public class DateAndTimeUtil {
 
     static Calendar c = Calendar.getInstance();
-    public static int year = c.get(Calendar.YEAR);
-    public static int month = c.get(Calendar.MONTH);
-    public static int day = c.get(Calendar.DAY_OF_MONTH);
+//    public static int year = c.get(Calendar.YEAR);
+//    public static int month = c.get(Calendar.MONTH);
+//    public static int day = c.get(Calendar.DAY_OF_MONTH);
+
+    public static int getYear() {
+        return Calendar.getInstance().get(Calendar.YEAR);
+    }
+
+    public static int getMonth() {
+        return Calendar.getInstance().get(Calendar.MONTH);
+    }
 
     public static String getTime() {
         SimpleDateFormat sDateFormat = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");

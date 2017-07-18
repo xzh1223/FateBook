@@ -1,5 +1,6 @@
 package com.example.zhenghangxia.fatebook.fragment;
 
+import android.content.Intent;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.ListView;
@@ -7,10 +8,10 @@ import android.widget.Spinner;
 import android.widget.TextView;
 
 import com.example.zhenghangxia.fatebook.R;
+import com.example.zhenghangxia.fatebook.activity.AddBillActivity;
 import com.example.zhenghangxia.fatebook.adapter.AccountAdapter;
 import com.example.zhenghangxia.fatebook.bean.AccountBean;
 import com.example.zhenghangxia.fatebook.fragment.base.BaseFragment;
-import com.example.zhenghangxia.fatebook.utils.DateAndTimeUtil;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -22,7 +23,7 @@ import java.util.List;
  *
  */
 
-public class AccountFragment extends BaseFragment {
+public class AccountFragment extends BaseFragment implements View.OnClickListener {
     private ListView mListView;
     private List<AccountBean> mList = new ArrayList<>();
     private Spinner mSpinner;
@@ -35,37 +36,38 @@ public class AccountFragment extends BaseFragment {
 
     @Override
     protected void initView() {
-        initToolBarTitle(getResources().getString(R.string.main_nav_account));
+        if (getView() != null) {
+            initData();
 
-        ImageButton mIBAdd = (ImageButton) getView().findViewById(R.id.ib_add);
-        mIBAdd.setImageDrawable(getResources().getDrawable(R.mipmap.icon_add));
+            initToolBarTitle(getResources().getString(R.string.main_nav_account));
 
-        mListView = (ListView) getView().findViewById(R.id.lv_account_list);
-        // 添加头布局
-        mListView.addHeaderView(View.inflate(getActivity(), R.layout.header_list_account, null));
-        // 添加尾布局
-        mListView.addFooterView(View.inflate(getActivity(), R.layout.footer_list, null));
+            ImageButton mIBAdd = (ImageButton) getView().findViewById(R.id.ib_add);
 
-        mTVYear = (TextView) getView().findViewById(R.id.tv_year);
-        mTVYear.setText(DateAndTimeUtil.year + " 年");
-        mSpinner = (Spinner) getView().findViewById(R.id.spinner);
-        mSpinner.setSelection(DateAndTimeUtil.month);
+            mListView = (ListView) getView().findViewById(R.id.lv_account_list);
 
-        initData();
-        initListView();
+            mTVYear = (TextView) getView().findViewById(R.id.tv_year);
 
+            mSpinner = (Spinner) getView().findViewById(R.id.spinner);
+
+            // 添加头布局
+            mListView.addHeaderView(View.inflate(getActivity(), R.layout.header_list_account, null));
+            // 添加尾布局
+            mListView.addFooterView(View.inflate(getActivity(), R.layout.footer_list, null));
+            // 设置标题栏图标
+            mIBAdd.setImageDrawable(getResources().getDrawable(R.mipmap.icon_add));
+            // 设置页面显示日期
+//            mTVYear.setText(DateAndTimeUtil.getYear() + " 年");
+//            mSpinner.setSelection(DateAndTimeUtil.getMonth());
+
+            // 设置ListView 适配器
+            AccountAdapter adapter = new AccountAdapter(getActivity(), mList);
+            mListView.setAdapter(adapter);
+
+            mIBAdd.setOnClickListener(this);
+
+        }
     }
 
-    /**
-     *  初始化 ListView
-     */
-    private void initListView() {
-
-        AccountAdapter adapter = new AccountAdapter(getActivity(), mList);
-
-        mListView.setAdapter(adapter);
-
-    }
 
     /**
      *  初始化数据
@@ -79,6 +81,20 @@ public class AccountFragment extends BaseFragment {
             bean.setNumber(-12);
             bean.setTypeContent("午餐");
             mList.add(bean);
+        }
+
+    }
+
+    @Override
+    public void onClick(View v) {
+
+        switch (v.getId()) {
+            case R.id.ib_add:
+
+                Intent intent = new Intent(getActivity(), AddBillActivity.class);
+                startActivity(intent);
+
+                break;
         }
 
     }
