@@ -7,6 +7,7 @@ import android.widget.TextView;
 
 import com.example.zhenghangxia.fatebook.R;
 import com.example.zhenghangxia.fatebook.activity.LifeContentActivity;
+import com.example.zhenghangxia.fatebook.activity.RobotActivity;
 import com.example.zhenghangxia.fatebook.fragment.base.BaseFragment;
 import com.example.zhenghangxia.fatebook.utils.ToastUtil;
 
@@ -73,7 +74,8 @@ public class LifeFragment extends BaseFragment implements View.OnClickListener {
                 startActivity(intent);
                 break;
             case R.id.rl_life_recommend_robot:
-                ToastUtil.toast(getActivity(), "Android6.0以上权限问题未解决，请耐心等待");
+                Intent intent2 = new Intent(getActivity(), RobotActivity.class);
+                startActivity(intent2);
                 break;
             case R.id.rl_life_recommend_laugh:
                 intent.putExtra("flag", "laugh");

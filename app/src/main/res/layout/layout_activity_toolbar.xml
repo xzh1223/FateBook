@@ -18,6 +18,14 @@
 
         android:id="@+id/ib_add"/>
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:textColor="#ffffff"
+        android:textSize="18sp"
+        android:id="@+id/tv_header_title"/>
+
     <!--android:src="@mipmap/icon_add"-->
 
 </android.support.v7.widget.Toolbar>

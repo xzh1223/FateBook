@@ -98,6 +98,18 @@
                         android:text="@string/result_plan"
                         android:id="@+id/tv_plan_think"/>
 
+                    <EditText
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="16sp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="20dp"
+                        android:lineSpacingMultiplier="1.3"
+                        android:text="@string/result_plan"
+                        android:id="@+id/et_plan_think"
+                        android:visibility="gone"/>
+
                     <!--水平分割线-->
                     <View
                         android:layout_width="match_parent"
@@ -122,8 +134,8 @@
                         android:layout_marginTop="10dp"
                         android:layout_marginBottom="8dp"
                         android:numStars="5"
+                        android:stepSize="0.5"
                         android:progressTint="@color/md_blue_400"
-                        style="@style/Widget.AppCompat.RatingBar.Indicator"
                         android:id="@+id/ratingBar"/>
 
                 </LinearLayout>

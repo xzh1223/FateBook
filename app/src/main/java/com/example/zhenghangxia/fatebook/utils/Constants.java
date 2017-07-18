@@ -22,4 +22,10 @@ public class Constants {
                 "我的生活"
         };
 
+        public static String BD_APP_ID = "NekDp8UyG1rbBtGio33FHGt9";
+        public static String BD_APP_SECRET = "13953b00c5fdaa869c350ec5787206bd";
+        public static String TL_APP_ID = "436c3aba216b4a0c877829a0a96e633b";
+        public static String TL_APP_SECRET = "c764c1145b3b197d";
+
+
 }

@@ -1,12 +1,16 @@
 package com.example.zhenghangxia.fatebook.fragment;
 
 import android.view.View;
+import android.widget.ImageButton;
 import android.widget.ListView;
+import android.widget.Spinner;
+import android.widget.TextView;
 
 import com.example.zhenghangxia.fatebook.R;
 import com.example.zhenghangxia.fatebook.adapter.AccountAdapter;
-import com.example.zhenghangxia.fatebook.fragment.base.BaseFragment;
 import com.example.zhenghangxia.fatebook.bean.AccountBean;
+import com.example.zhenghangxia.fatebook.fragment.base.BaseFragment;
+import com.example.zhenghangxia.fatebook.utils.DateAndTimeUtil;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -21,6 +25,8 @@ import java.util.List;
 public class AccountFragment extends BaseFragment {
     private ListView mListView;
     private List<AccountBean> mList = new ArrayList<>();
+    private Spinner mSpinner;
+    private TextView mTVYear;
 
     @Override
     protected int getLayout() {
@@ -31,11 +37,19 @@ public class AccountFragment extends BaseFragment {
     protected void initView() {
         initToolBarTitle(getResources().getString(R.string.main_nav_account));
 
+        ImageButton mIBAdd = (ImageButton) getView().findViewById(R.id.ib_add);
+        mIBAdd.setImageDrawable(getResources().getDrawable(R.mipmap.icon_add));
+
         mListView = (ListView) getView().findViewById(R.id.lv_account_list);
         // 添加头布局
         mListView.addHeaderView(View.inflate(getActivity(), R.layout.header_list_account, null));
         // 添加尾布局
         mListView.addFooterView(View.inflate(getActivity(), R.layout.footer_list, null));
+
+        mTVYear = (TextView) getView().findViewById(R.id.tv_year);
+        mTVYear.setText(DateAndTimeUtil.year + " 年");
+        mSpinner = (Spinner) getView().findViewById(R.id.spinner);
+        mSpinner.setSelection(DateAndTimeUtil.month);
 
         initData();
         initListView();

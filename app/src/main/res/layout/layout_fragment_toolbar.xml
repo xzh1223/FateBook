@@ -3,7 +3,8 @@
     android:layout_width="match_parent"
     android:layout_height="50dp"
     android:background="@color/md_blue_400"
-    android:elevation="5dp">
+    android:elevation="5dp"
+    android:id="@+id/toolbar">
 
     <TextView
         android:layout_width="wrap_content"
@@ -12,5 +13,14 @@
         android:textColor="#ffffff"
         android:textSize="18sp"
         android:id="@+id/tv_header_title"/>
+
+    <ImageButton
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_gravity="right|center_vertical"
+        android:layout_marginRight="16dp"
+        android:background="@null"
+        android:scaleType="centerCrop"
+        android:id="@+id/ib_add"/>
 
 </android.support.v7.widget.Toolbar>

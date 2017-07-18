@@ -21,6 +21,6 @@ public class WritePlanActivity extends BaseActivity {
     protected void initView() {
         initToolBar();
         ImageButton imageButton = (ImageButton) findViewById(R.id.ib_add);
-        imageButton.setImageDrawable(getResources().getDrawable(R.mipmap.icon_add));
+        imageButton.setImageDrawable(getResources().getDrawable(R.mipmap.icon_submit));
     }
 }

@@ -1,8 +1,10 @@
 package com.example.zhenghangxia.fatebook.activity;
 
+import android.annotation.TargetApi;
 import android.os.Build;
 import android.support.annotation.RequiresApi;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.RatingBar;
 import android.widget.TextView;
@@ -11,6 +13,8 @@ import com.example.zhenghangxia.fatebook.R;
 import com.example.zhenghangxia.fatebook.activity.base.BaseActivity;
 import com.example.zhenghangxia.fatebook.utils.ToastUtil;
 import com.zzhoujay.richtext.RichText;
+
+import static com.example.zhenghangxia.fatebook.R.id.ratingBar;
 
 /**
  * Created by zhenghangxia on 17-7-6.
@@ -26,6 +30,8 @@ public class PlanContentActivity extends BaseActivity {
     private String content;
     private float star;
     private ImageButton mAdd;
+    private EditText mETThink;
+    boolean flag = true;
 
     @Override
     protected int getLayout() {
@@ -43,7 +49,8 @@ public class PlanContentActivity extends BaseActivity {
         mTime = (TextView) findViewById(R.id.tv_plan_time);
         mContent = (TextView) findViewById(R.id.tv_plan_content);
         mThink = (TextView) findViewById(R.id.tv_plan_think);
-        mRatingBar = (RatingBar) findViewById(R.id.ratingBar);
+        mETThink = (EditText) findViewById(R.id.et_plan_think);
+        mRatingBar = (RatingBar) findViewById(ratingBar);
 
         initData();
         setView();
@@ -56,9 +63,30 @@ public class PlanContentActivity extends BaseActivity {
     private void setListener() {
 
         mAdd.setOnClickListener(new View.OnClickListener() {
+            @TargetApi(Build.VERSION_CODES.LOLLIPOP)
             @Override
             public void onClick(View v) {
-                ToastUtil.toast(PlanContentActivity.this,"暂无效果");
+                if (flag) {
+                    mAdd.setImageDrawable(getDrawable(R.mipmap.icon_ok));
+                    mThink.setVisibility(View.GONE);
+                    mETThink.setVisibility(View.VISIBLE);
+                    flag = false;
+                    mRatingBar.setIsIndicator(flag);
+                } else {
+                    mAdd.setImageDrawable(getDrawable(R.mipmap.icon_add));
+                    mETThink.setVisibility(View.GONE);
+                    mThink.setVisibility(View.VISIBLE);
+                    flag = true;
+                    mRatingBar.setIsIndicator(flag);
+                }
+
+            }
+        });
+
+        mRatingBar.setOnRatingBarChangeListener(new RatingBar.OnRatingBarChangeListener() {
+            @Override
+            public void onRatingChanged(RatingBar ratingBar, float rating, boolean fromUser) {
+                ToastUtil.toast(PlanContentActivity.this, rating+"");
             }
         });
 
@@ -84,7 +112,13 @@ public class PlanContentActivity extends BaseActivity {
                 "<DIV align=right><FONT size=3>（电子信息工程学院）</FONT></DIV><div></div>";
         RichText.from(string).into(mThink);
         mRatingBar.setRating(star);
+        mRatingBar.setIsIndicator(true);
     }
+
+
+
+
+
 
     /**
      *  初始化数据

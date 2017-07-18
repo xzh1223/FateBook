@@ -28,7 +28,7 @@
     <string name="title_plan">详情</string>
     <string name="think_plan">总结与反思：</string>
     <string name="result_plan">今天有什么收获，感悟到什么？</string>
-    <string name="star_plan">给今天的自己打的分：</string>
+    <string name="star_plan">给今天的自己打分：</string>
     <string name="text_day_plan">明日约定</string>
     <string name="text_week_plan">相约7日后</string>
     <string name="text_summary_plan">表个心情</string>
@@ -50,6 +50,7 @@
     <string name="text_cookbook_life">今日菜谱</string>
     <string name="text_position_life">位置</string>
     <string name="text_message_life">系统消息</string>
+    <string name="welcome_robot">您想知道什么？天气/笑话/故事/百科等很多东西我都懂哦</string>
 
     <!-- layout_news -->
     <string name="channel_1">频道1</string>
@@ -57,5 +58,7 @@
     <string name="channel_3">频道3</string>
     <string name="channel_4">频道4</string>
     <string name="channel_5">频道5</string>
+
+
 
 </resources>
