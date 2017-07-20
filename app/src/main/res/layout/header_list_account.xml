@@ -10,7 +10,8 @@
         android:layout_height="match_parent"
         android:layout_weight="1"
         android:orientation="vertical"
-        android:layout_margin="10dp">
+        android:layout_margin="10dp"
+        android:id="@+id/ll_time">
 
         <TextView
             android:layout_width="match_parent"
@@ -19,18 +20,14 @@
             android:id="@+id/tv_year"
             android:text="2017年"/>
 
-        <Spinner
-            android:layout_width="wrap_content"
+        <TextView
+            android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginLeft="20dp"
-            android:id="@+id/spinner"
-            android:textColor="@color/md_white_1000"
-            android:textSize="24sp"
             android:gravity="center"
-            android:entries="@array/month"
-            android:spinnerMode="dialog"
-            android:elevation="0dp"
-            android:background="@color/md_blue_400" />
+            android:textSize="24sp"
+            android:textColor="@color/md_white_1000"
+            android:id="@+id/tv_month"
+            android:text="7月"/>
 
     </LinearLayout>
 
@@ -58,7 +55,7 @@
             android:gravity="center"
             android:textSize="24sp"
             android:textColor="@color/md_white_1000"
-            android:text="100"/>
+            android:id="@+id/tv_pay_num"/>
 
     </LinearLayout>
 
@@ -86,7 +83,7 @@
             android:gravity="center"
             android:textSize="24sp"
             android:textColor="@color/md_white_1000"
-            android:text="110"/>
+            android:id="@+id/tv_income_num"/>
 
     </LinearLayout>
 

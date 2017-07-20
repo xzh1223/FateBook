@@ -74,6 +74,7 @@ public class AddBillAdapter extends BaseAdapter {
 //            convertView.setBackground(mContext.getResources().getDrawable(R.drawable.circle_bg));
             holder.styleIcon.setBackground(mContext.getDrawable(R.drawable.circle_bg));
             holder.styleName.setTextColor(mContext.getColor(R.color.md_blue_400));
+
         } else {
 //            convertView.setBackgroundColor(mContext.getColor(R.color.md_white_1000));
             holder.styleIcon.setBackgroundColor(Color.WHITE);
@@ -90,10 +91,11 @@ public class AddBillAdapter extends BaseAdapter {
 
     }
 
-    public void changeState(int pos) {
+    public AccountStyleBean changeState(int pos) {
         selectorPosition = pos;
         notifyDataSetChanged();
-
+        AccountStyleBean bean = mList.get(pos);
+        return bean;
     }
 
 }

@@ -55,15 +55,9 @@ public class PlanAdapter extends ArrayAdapter {
             holder = (ViewHolder) convertView.getTag();
         }
         if (bean != null) {
-            holder.mTextTime.setText("2017-07-06 09:24:00");
-            holder.mTextContent.setText(
-                    "深夜，三名小偷敦也、翔太、幸平正开着偷来的汽车逃跑。途中汽车突然抛锚" +
-                    "，无奈下三人只好逃入翔太以前发现的弃屋“浪矢杂货店”里躲避，待到天亮再作打算" +
-                    "。三人在店内搜索时，突然有一封信从铁卷门上的邮件投递口被投了进来。三人拆阅信件" +
-                    "，发现内容是一个化名“月兔”的女性写来的烦恼咨询信。从店内留下的旧杂志" +
-                    "，三人发现这家“浪矢杂货店”因为以前的店主将致函的烦恼咨询信件一一用心解答而闻名。" +
-                    "敦也坚持不要理睬，而翔太和幸平则认为这种机会千载难逢，决定给那封咨询信件写回信。");
-            holder.mRatingBar.setRating(4);
+            holder.mTextTime.setText(bean.getTime());
+            holder.mTextContent.setText(bean.getContent());
+            holder.mRatingBar.setRating(bean.getStar());
         }
         return convertView;
     }

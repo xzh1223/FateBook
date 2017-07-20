@@ -35,5 +35,5 @@ dependencies {
     compile 'com.android.support:cardview-v7:+'
     compile 'com.android.support:recyclerview-v7:+'
     compile 'com.zzhoujay.richtext:richtext:2.5.2'
-
+    compile 'org.litepal.android:core:+'
 }

@@ -9,7 +9,6 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.bumptech.glide.Glide;
 import com.example.zhenghangxia.fatebook.R;
 import com.example.zhenghangxia.fatebook.bean.AccountBean;
 
@@ -53,10 +52,14 @@ public class AccountAdapter extends ArrayAdapter {
             holder = (ViewHolder) convertView.getTag();
         }
         if (bean != null) {
-            holder.mTextTime.setText(bean.getTime());
+            holder.mTextTime.setText(bean.getYear() + " - " + bean.getMonth() + " - " + bean.getDay());
             holder.mTextStyle.setText(bean.getTypeContent());
-            holder.mTextNumber.setText(String.valueOf(bean.getNumber()));
-            Glide.with(mContext).load(bean.getImgSrc()).into(holder.mImageView);
+            if ("支出".equals(bean.getType())) {
+                holder.mTextNumber.setText("-" + bean.getNumber());
+            } else {
+                holder.mTextNumber.setText("+" + bean.getNumber());
+            }
+            holder.mImageView.setImageResource(bean.getImgSrc());
         }
         return convertView;
     }

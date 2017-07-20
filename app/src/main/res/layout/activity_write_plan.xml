@@ -14,7 +14,7 @@
         style="@style/input_edit_layout"
         android:hint="备注（可选）">
         <android.support.design.widget.TextInputEditText
-            android:id="@+id/edit_time"
+            android:id="@+id/edit_remark"
             style="@style/input_edit_text"/>
     </android.support.design.widget.TextInputLayout>
 

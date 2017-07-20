@@ -1,5 +1,7 @@
 package com.example.zhenghangxia.fatebook.bean;
 
+import org.litepal.crud.DataSupport;
+
 /**
  * Created by zhenghangxia on 17-7-5.
  *
@@ -7,10 +9,10 @@ package com.example.zhenghangxia.fatebook.bean;
  *
  */
 
-public class PlanBean {
+public class PlanBean extends DataSupport {
 
     // 类型
-    private int type;
+    private String type;
     // ID
     private int id;
     // 时间
@@ -18,13 +20,17 @@ public class PlanBean {
     // 内容
     private String content;
     // 星级
-    private float star;
+    private float star = 0;
+    // 备注
+    private String remark;
+    // 总结反思
+    private String think;
 
-    public int getType() {
+    public String getType() {
         return type;
     }
 
-    public void setType(int type) {
+    public void setType(String type) {
         this.type = type;
     }
 
@@ -58,5 +64,21 @@ public class PlanBean {
 
     public void setStar(float star) {
         this.star = star;
+    }
+
+    public String getRemark() {
+        return remark;
+    }
+
+    public void setRemark(String remark) {
+        this.remark = remark;
+    }
+
+    public String getThink() {
+        return think;
+    }
+
+    public void setThink(String think) {
+        this.think = think;
     }
 }

@@ -35,7 +35,7 @@
                     android:maxLines="2"
                     android:textColor="@color/md_white_1000"
                     android:textSize="20sp"
-                    android:id="@+id/tv_plan_text"
+                    android:id="@+id/tv_plan_remark"
                     android:text="@string/title_plan"/>
 
                 <TextView

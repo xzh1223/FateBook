@@ -14,8 +14,12 @@
     <string name="plan_write_summary">心情</string>
     <string name="plan_write_essay">随笔</string>
 
+    <string name="plan_content_null">content不能为空</string>
+    <string name="plan_details">详情</string>
+
     <!--AddBill-->
     <string name="select">请选择</string>
+    <string name="add_failed">添加失败</string>
 
     <!-- 其他 -->
     <string name="no_">暂无效果</string>

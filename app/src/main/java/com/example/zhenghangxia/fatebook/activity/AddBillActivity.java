@@ -17,7 +17,11 @@ import android.widget.TextView;
 import com.example.zhenghangxia.fatebook.R;
 import com.example.zhenghangxia.fatebook.activity.base.BaseActivity;
 import com.example.zhenghangxia.fatebook.adapter.AddBillAdapter;
+import com.example.zhenghangxia.fatebook.bean.AccountBean;
 import com.example.zhenghangxia.fatebook.bean.AccountStyleBean;
+import com.example.zhenghangxia.fatebook.dbmanager.DBManager;
+import com.example.zhenghangxia.fatebook.utils.DateAndTimeUtil;
+import com.example.zhenghangxia.fatebook.utils.ToastUtil;
 
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -37,6 +41,10 @@ public class AddBillActivity extends BaseActivity implements AdapterView.OnItemC
     public int selectorPosition = 0;
     private EditText mETMoney;
     private EditText mETRemark;
+    private AccountStyleBean mBean;
+    private int mYear;
+    private int mMonth;
+    private int mDay;
 
     @Override
     protected int getLayout() {
@@ -60,6 +68,9 @@ public class AddBillActivity extends BaseActivity implements AdapterView.OnItemC
 
         mIBAdd.setImageDrawable(getResources().getDrawable(R.mipmap.icon_submit));
         mTVTitle.setText(getResources().getString(R.string.add_a_bill));
+        // 设置默认日期
+        mTVTime.setText(DateAndTimeUtil.getMonth() + "-" + DateAndTimeUtil.getDay());
+        // 设置键盘模式
         mETMoney.setInputType(EditorInfo.TYPE_CLASS_PHONE);
 
         mAdapter = new AddBillAdapter(this, mData);
@@ -73,6 +84,10 @@ public class AddBillActivity extends BaseActivity implements AdapterView.OnItemC
     }
 
     private void initData() {
+
+        mYear = DateAndTimeUtil.getYear();
+        mMonth = DateAndTimeUtil.getMonth();
+        mDay = DateAndTimeUtil.getDay();
 
         mData = new ArrayList<>();
         mData.add(new AccountStyleBean(R.mipmap.icon_food, "餐饮"));
@@ -98,7 +113,7 @@ public class AddBillActivity extends BaseActivity implements AdapterView.OnItemC
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-        mAdapter.changeState(position);
+        mBean = mAdapter.changeState(position);
         selectorPosition = position;
     }
 
@@ -106,6 +121,8 @@ public class AddBillActivity extends BaseActivity implements AdapterView.OnItemC
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.ib_add:
+
+                submitAccount();
 
                 break;
             case R.id.tv_time:
@@ -119,6 +136,46 @@ public class AddBillActivity extends BaseActivity implements AdapterView.OnItemC
 
                 break;
         }
+    }
+
+    /**
+     *  提交数据
+     */
+    private void submitAccount() {
+
+        String sStyle = mTVStyle.getText().toString();
+        String sMoney = mETMoney.getText().toString();
+        String sRemark = mETRemark.getText().toString();
+        String sName;
+        int sImage;
+        if (selectorPosition == 0) {
+            sName = "餐饮";
+            sImage = R.mipmap.icon_food;
+        } else {
+            sName = mBean.getStyleName();
+            sImage = mBean.getStyleId();
+        }
+        AccountBean bean = new AccountBean();
+        bean.setImgSrc(sImage);
+        bean.setYear(mYear);
+        bean.setMonth(mMonth);
+        bean.setDay(mDay);
+        bean.setType(sStyle);
+        bean.setNumber(sMoney);
+        if (sRemark.equals("") || sRemark == null) {
+            bean.setTypeContent(sName);
+        } else {
+            bean.setTypeContent(sName + "-" + sRemark);
+        }
+        // 保存到数据库中
+        boolean result = DBManager.addAccountBean(bean);
+        if (result) {
+            finish();
+        } else {
+            ToastUtil.toast(AddBillActivity.this, getResources().getString(R.string.add_failed));
+        }
+
+
     }
 
     /**
@@ -147,7 +204,10 @@ public class AddBillActivity extends BaseActivity implements AdapterView.OnItemC
         new DatePickerDialog(AddBillActivity.this, new DatePickerDialog.OnDateSetListener() {
             @Override
             public void onDateSet(DatePicker view, int year, int month, int day) {
-                mTVTime.setText((month + 1) + "-" + day);
+                mYear = year;
+                mMonth = month + 1;
+                mDay = day;
+                mTVTime.setText(mMonth + "-" + mDay);
             }
         }, c.get(Calendar.YEAR), c.get(Calendar.MONTH),
                 c.get(Calendar.DAY_OF_MONTH) ).show();

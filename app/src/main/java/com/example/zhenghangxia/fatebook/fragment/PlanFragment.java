@@ -18,7 +18,9 @@ import com.example.zhenghangxia.fatebook.activity.PlanContentActivity;
 import com.example.zhenghangxia.fatebook.activity.WritePlanActivity;
 import com.example.zhenghangxia.fatebook.adapter.PlanAdapter;
 import com.example.zhenghangxia.fatebook.bean.PlanBean;
+import com.example.zhenghangxia.fatebook.dbmanager.DBManager;
 import com.example.zhenghangxia.fatebook.fragment.base.BaseFragment;
+import com.example.zhenghangxia.fatebook.utils.Constants;
 import com.example.zhenghangxia.fatebook.utils.ToastUtil;
 import com.github.clans.fab.FloatingActionButton;
 import com.github.clans.fab.FloatingActionMenu;
@@ -134,7 +136,7 @@ public class PlanFragment extends BaseFragment implements AdapterView.OnItemClic
      */
     private void setEvents() {
 
-        mRefresh.setRefreshing(true);
+        /*mRefresh.setRefreshing(true);
 
         mRefresh.postDelayed(new Runnable() {
             @Override
@@ -143,15 +145,11 @@ public class PlanFragment extends BaseFragment implements AdapterView.OnItemClic
                 mRefresh.setRefreshing(false);
             }
         },2000);
-
+*/
         mRefresh.setOnRefreshListener(this);
 
         // 设置点击按钮外部关闭弹出
         mFloatMenu.setClosedOnTouchOutside(true);
-
-        mAdapter = new PlanAdapter(getActivity(), mList);
-
-        mListView.setAdapter(mAdapter);
 
         // listView子项点击事件监听器
         mListView.setOnItemClickListener(this);
@@ -172,7 +170,7 @@ public class PlanFragment extends BaseFragment implements AdapterView.OnItemClic
      */
     private void loadData() {
 
-        for (int i = 0; i < 8; i++) {
+        /*for (int i = 0; i < 8; i++) {
             PlanBean bean = new PlanBean();
             bean.setTime("2017-07-06 11:16:00 ");
             bean.setContent("   深夜，三名小偷敦也、翔太、幸平正开着偷来的汽车逃跑。途中汽车突然抛锚" +
@@ -183,7 +181,9 @@ public class PlanFragment extends BaseFragment implements AdapterView.OnItemClic
                     "敦也坚持不要理睬，而翔太和幸平则认为这种机会千载难逢，决定给那封咨询信件写回信。");
             bean.setStar(3);
             mList.add(bean);
-        }
+        }*/
+
+        mList = DBManager.queryPlanBeanList();
 
     }
 
@@ -197,6 +197,8 @@ public class PlanFragment extends BaseFragment implements AdapterView.OnItemClic
             intent.putExtra("time", planBean.getTime());
             intent.putExtra("content", planBean.getContent());
             intent.putExtra("star", planBean.getStar());
+            intent.putExtra("remark", planBean.getRemark());
+            intent.putExtra("think", planBean.getThink());
             startActivity(intent, ActivityOptions.makeSceneTransitionAnimation(getActivity()).toBundle());
         }
 
@@ -229,19 +231,19 @@ public class PlanFragment extends BaseFragment implements AdapterView.OnItemClic
         Intent intent = new Intent(getActivity(), WritePlanActivity.class);
         switch (v.getId()) {
             case R.id.write_daily_plan:
-                ToastUtil.toast(getActivity(), getResources().getString(R.string.plan_write_day));
+                intent.putExtra(Constants.PLAN_INTENT_MSG, Constants.PLAN_DAY);
                 startActivity(intent);
                 break;
             case R.id.write_weekly_plan:
-                ToastUtil.toast(getActivity(), getResources().getString(R.string.plan_write_week));
+                intent.putExtra(Constants.PLAN_INTENT_MSG, Constants.PLAN_WEEK);
                 startActivity(intent);
                 break;
             case R.id.write_summary_plan:
-                ToastUtil.toast(getActivity(), getResources().getString(R.string.plan_write_summary));
+                intent.putExtra(Constants.PLAN_INTENT_MSG, Constants.PLAN_SUMMARY);
                 startActivity(intent);
                 break;
             case R.id.write_essay_plan:
-                ToastUtil.toast(getActivity(), getResources().getString(R.string.plan_write_essay));
+                intent.putExtra(Constants.PLAN_INTENT_MSG, Constants.PLAN_ESSAY);
                 startActivity(intent);
                 break;
             default:
@@ -262,5 +264,13 @@ public class PlanFragment extends BaseFragment implements AdapterView.OnItemClic
                 mRefresh.setRefreshing(false);
             }
         },2000);
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        initData();
+        mAdapter = new PlanAdapter(getActivity(), mList);
+        mListView.setAdapter(mAdapter);
     }
 }
